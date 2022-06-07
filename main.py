@@ -1,16 +1,10 @@
-import pygame
+import pygame,view,model,controller
 
-pygame.display.set_mode([800, 800])
+
 while True:
+    controller.krestik()
 
-    krestik=pygame.event.get()
 
-    for c in krestik:
-        if c.type==pygame.QUIT:
-            exit()
-        print(c)
-a="a"
-b="B"
 
 
 
