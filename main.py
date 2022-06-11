@@ -3,6 +3,8 @@ import pygame,view,model,controller
 
 while True:
     controller.krestik()
+    view.what()
+
 
 
 
