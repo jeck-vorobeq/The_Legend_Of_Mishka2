@@ -1,9 +1,11 @@
-import pygame,model
+import pygame,model,helper
 b=2
-e=pygame.display.set_mode([800, 800])
+screen=pygame.display.set_mode([800, 800])
+bottom=pygame.image.load("hero/bottom.jpg")
+#bottom=helper.izmeni_kartinku(bottom,50,60,[237,28,36],0)
 def what():
-    pygame.draw.rect(e, [240, 200, 219], model.floor)
-    pygame.draw.rect(e, [200, 210, 20], model.hero)
+    pygame.draw.rect(screen, [240, 200, 219], model.floor)
+    screen.blit(bottom,model.hero)
     pygame.display.flip()
 
 

@@ -1,12 +1,12 @@
 import pygame
 def move_top():
-    hero.y-=3
+    hero.y-=5
 def move_bottom():
-    hero.y+=3
+    hero.y+=5
 def move_right():
-    hero.x-=3
+    hero.x-=5
 def move_left():
-    hero.x+=3
+    hero.x+=5
 def shield():
     None
 def sword():
