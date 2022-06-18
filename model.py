@@ -6,7 +6,7 @@ def move_bottom():
 def move_right():
     hero.x-=5
 def move_left():
-    hero.x+=5
+    hero.x+=5;
 def shield():
     None
 def sword():
