@@ -2,11 +2,9 @@ import pygame,view,model,controller
 
 we=pygame.time.Clock()
 while True:
-    we.tick(3)
+    we.tick(120)
     controller.krestik()
     view.what()
-
-
 
 
 

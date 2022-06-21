@@ -20,7 +20,6 @@ def krestik():
     value=lol.get_hat(0)
     lalue=lol.get_button(1)
     walue = lol.get_button(0)
-    print(lalue)
     if value==(0,1):
         model.move_top()
     if value == (0, -1):
