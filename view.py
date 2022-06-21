@@ -13,19 +13,22 @@ costum="left1"
 def what():
     global costum,q
     pygame.draw.rect(screen, [240, 200, 219], model.floor)
-    screen.blit(left2, model.hero)
-
-
+    if costum == "left1":
+        screen.blit(left1, model.hero)
+    elif costum == "left2":
+        screen.blit(left2, model.hero)
+    elif costum == "left3":
+        screen.blit(left3, model.hero)
     qtime = (time.time() - q)
-    if qtime>=0.05:
+    if qtime>=2.5:
         q=time.time()
-        # if costum == "left1":
-        #
-        #     costum = "left2"
-        # elif costum == "left2":
-        #     screen.blit(left3, model.hero)
-        #     costum = "left3"
-        # elif costum == "left3":
-        #     screen.blit(left1, model.hero)
-        #     costum = "left1"
+        if costum == "left1":
+
+            costum = "left2"
+        elif costum == "left2":
+
+            costum = "left3"
+        elif costum == "left3":
+
+            costum = "left1"
     pygame.display.flip()
