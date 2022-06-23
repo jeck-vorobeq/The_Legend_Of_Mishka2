@@ -1,80 +1,8 @@
-import pygame,view,model,controller
+import pygame, view, model, controller
 
-we=pygame.time.Clock()
+we = pygame.time.Clock()
 while True:
-    we.tick(120)
+    print(model.state_hero)
+    we.tick(60)
     controller.krestik()
     view.what()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
