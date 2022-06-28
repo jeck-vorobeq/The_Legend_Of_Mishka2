@@ -15,12 +15,14 @@ def move_right():
 
 def move_left():
     global state_hero
-    state_hero="stand"
+
+
     hero.x -= 5
     state_hero="go_left"
 
-def shield():
-    None
+def state_hero_stand():
+    global state_hero
+    state_hero="stand"
 
 
 def sword():

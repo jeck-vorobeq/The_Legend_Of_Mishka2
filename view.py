@@ -13,6 +13,7 @@ costum = "left1"
 
 
 def draw_hero():
+
     if costum == "left1":
         screen.blit(left1, model.hero)
     elif costum == "left2":
@@ -23,21 +24,24 @@ def draw_hero():
 
 def change_costum_hero():
     global costum
-    if costum == "left1":
+    if model.state_hero=="go_left":
 
-        costum = "left2"
-    elif costum == "left2":
+        if costum == "left1":
 
-        costum = "left3"
-    elif costum == "left3":
+            costum = "left2"
+        elif costum == "left2":
 
-        costum = "left1"
+            costum = "left3"
+        elif costum == "left3":
 
+            costum = "left1"
+    if model.state_hero=="stand":
+        costum= "left3"
 
 def play_animation_hero():
     global q
     qtime = (time.time() - q)
-    if qtime >= 0.5:
+    if qtime >= 0.1:
         q = time.time()
         change_costum_hero()
 
