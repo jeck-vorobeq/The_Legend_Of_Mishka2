@@ -6,8 +6,9 @@ def move_top():
 
 
 def move_bottom():
+    global state_hero
     hero.y += 3
-
+    state_hero="go_bottom"
 
 def move_right():
     global state_hero
