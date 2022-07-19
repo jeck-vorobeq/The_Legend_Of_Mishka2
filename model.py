@@ -1,6 +1,6 @@
-import pygame
+import hero,pygame
 
-
+a=hero.Ball()
 def move_top():
     global state_hero
     hero.y -= 3
@@ -49,4 +49,4 @@ floor = pygame.Rect(100, 100, 600, 600)
 hero = pygame.Rect(500, 500, 50, 60)
 state_hero = "stand_left"
 
-a = 1
+
