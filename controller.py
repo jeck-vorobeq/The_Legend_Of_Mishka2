@@ -1,14 +1,14 @@
 import time
 
-import pygame, model
+import pygame, model,hero
 from pygame import joystick
 
 joystick.init()
 
-#lol = joystick.Joystick(0)
 
-#lol.init()
+# lol = joystick.Joystick(0)
 
+# lol.init()
 
 
 def krestik():
@@ -18,6 +18,11 @@ def krestik():
         # print(c)
         if c.type == pygame.QUIT:
             exit()
+        if c.type == pygame.KEYDOWN:
+            if c.key == pygame.K_SPACE:
+                model.a.plus_razmer()
+        if c.type == pygame.MOUSEBUTTONDOWN:
+            model.a =hero.Ball(10,c.pos,30)
     # value = lol.get_hat(0)
     # lalue = lol.get_button(1)
     # walue = lol.get_button(0)

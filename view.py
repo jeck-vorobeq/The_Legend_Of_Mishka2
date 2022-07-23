@@ -2,7 +2,7 @@ import pygame, model, helper, time
 
 b = 2
 q = time.time()
-screen = pygame.display.set_mode([800, 800])
+screen = pygame.display.set_mode([1900, 950])
 top1 = pygame.image.load("hero/top1.png")
 top2 = pygame.image.load("hero/top2.png")
 top3 = pygame.image.load("hero/top3.png")
