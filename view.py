@@ -114,7 +114,7 @@ def play_animation_hero():
 
 
 def what():
-    pygame.draw.rect(screen, [240, 200, 219], model.floor)
+
     draw_hero()
     play_animation_hero()
     model.a.draw(screen)

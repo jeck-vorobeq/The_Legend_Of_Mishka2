@@ -7,12 +7,12 @@ class Ball():
         self.razmer = razmer
         self.where= where
         self.prirost=prirost
-        self.r = random.randint(1, 255)
-        self.g = random.randint(1, 255)
-        self.b = random.randint(1, 255)
+
     def plus_razmer(self):
         self.razmer += self.prirost
 
     def draw(self,screen):
-
+        self.r = random.randint(1, 255)
+        self.g = random.randint(1, 255)
+        self.b = random.randint(1, 255)
         pygame.draw.circle(screen,[self.r,self.g,self.b],self.where,self.razmer)

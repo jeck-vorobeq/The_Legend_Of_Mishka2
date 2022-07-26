@@ -1,6 +1,6 @@
 import hero,pygame
 
-a=hero.Ball(10,[420,500],30)
+a=hero.Ball(10,[420,500],3)
 
 def move_top():
     global state_hero
