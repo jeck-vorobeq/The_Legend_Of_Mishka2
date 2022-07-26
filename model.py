@@ -1,6 +1,6 @@
-import hero,pygame
+import hero as hero_mod,pygame
 
-a=hero.Ball(10,[420,500],3)
+
 
 def move_top():
     global state_hero
@@ -42,12 +42,11 @@ def state_hero_stand():
 
 
 
-def sword():
-    None
+
 
 
 floor = pygame.Rect(100, 100, 600, 600)
-hero = pygame.Rect(500, 500, 50, 60)
-state_hero = "stand_left"
-
+#hero = pygame.Rect(500, 500, 50, 60)
+#state_hero = "stand_left"
+hero=hero_mod.Hero()
 

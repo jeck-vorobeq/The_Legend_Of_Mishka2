@@ -13,16 +13,12 @@ joystick.init()
 
 def krestik():
     krestik = pygame.event.get()
-    model.state_hero_stand()
+    #model.state_hero_stand()
     for c in krestik:
         # print(c)
         if c.type == pygame.QUIT:
             exit()
-        if c.type == pygame.KEYDOWN:
-            if c.key == pygame.K_SPACE:
-                model.a.plus_razmer()
-        if c.type == pygame.MOUSEBUTTONDOWN:
-            model.a =hero.Ball(10,c.pos,30)
+
     # value = lol.get_hat(0)
     # lalue = lol.get_button(1)
     # walue = lol.get_button(0)
