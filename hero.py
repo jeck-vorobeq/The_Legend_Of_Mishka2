@@ -1,4 +1,5 @@
 import pygame
+
 top1 = pygame.image.load("hero/top1.png")
 top2 = pygame.image.load("hero/top2.png")
 top3 = pygame.image.load("hero/top3.png")
@@ -28,9 +29,10 @@ right3 = pygame.transform.flip(left3, True, False)
 class Hero():
     def __init__(self):
         self.rect_hero = pygame.Rect(500, 500, 50, 60)
-        self.state="stand_down"
-        self.costum="bottom1"
-    def draw_hero(self,screen):
+        self.state = "go_bottom"
+        self.costum = "bottom1"
+
+    def draw_hero(self, screen):
         if self.costum == "left1":
             screen.blit(left1, self.rect_hero)
         elif self.costum == "left2":
@@ -58,3 +60,63 @@ class Hero():
             screen.blit(top2, self.rect_hero)
         elif self.costum == "top3":
             screen.blit(top3, self.rect_hero)
+
+    def change_costum_hero(self):
+        if self.state == "go_left":
+
+            if self.costum != "left1" and self.costum != "left2":
+                self.costum = "left1"
+            elif self.costum == "left1":
+                self.costum = "left2"
+            elif self.costum == "left2":
+                self.costum = "left3"
+        if self.state == "stand_left":
+            self.costum = "left3"
+        if self.state == "go_right":
+
+            if self.costum != "right1" and self.costum != "right2":
+                self.costum = "right1"
+            elif self.costum == "right1":
+                self.costum = "right2"
+            elif self.costum == "right2":
+                self.costum = "right3"
+
+        if self.state == "stand_right":
+            self.costum = "right3"
+
+        if self.state == "go_bottom":
+            if self.costum != "bottom1" and self.costum != "bottom2":
+                self.costum = "bottom1"
+            elif self.costum == "bottom1":
+                self.costum = "bottom2"
+            elif self.costum == "bottom2":
+                self.costum = "bottom3"
+        if self.state == "stand_bottom":
+            self.costum = "bottom3"
+
+        if self.state == "go_top":
+            if self.costum != "top1" and self.costum != "top2":
+                self.costum = "top1"
+            elif self.costum == "top1":
+                self.costum = "top2"
+            elif self.costum == "top2":
+                self.costum = "top3"
+        if self.state == "stand_top":
+            self.costum = "top3"
+
+    def move_top(self):
+        self.rect_hero.y -= 3
+        self.state = "go_top"
+
+    def move_bottom(self):
+        self.rect_hero.y += 3
+        self.state = "go_bottom"
+
+    def move_right(self):
+        self.rect_hero.x += 3
+        self.state = "go_right"
+
+    def move_left(self):
+
+        self.rect_hero.x -= 3
+        self.state = "go_left"
