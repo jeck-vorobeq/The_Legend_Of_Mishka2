@@ -1,4 +1,8 @@
-import pygame
+import pygame, time
+
+
+
+
 
 top1 = pygame.image.load("hero/top1.png")
 top2 = pygame.image.load("hero/top2.png")
@@ -27,10 +31,12 @@ right3 = pygame.transform.flip(left3, True, False)
 
 
 class Hero():
-    def __init__(self):
-        self.rect_hero = pygame.Rect(500, 500, 50, 60)
+    def __init__(self,x,y,animation_delay=0.2):
+        self.rect_hero = pygame.Rect(x, y, 50, 60)
         self.state = "go_bottom"
         self.costum = "bottom1"
+        self.q = time.time()
+        self.animation_delay=animation_delay
 
     def draw_hero(self, screen):
         if self.costum == "left1":
@@ -60,6 +66,7 @@ class Hero():
             screen.blit(top2, self.rect_hero)
         elif self.costum == "top3":
             screen.blit(top3, self.rect_hero)
+        self.play_animation_hero()
 
     def change_costum_hero(self):
         if self.state == "go_left":
@@ -103,6 +110,13 @@ class Hero():
                 self.costum = "top3"
         if self.state == "stand_top":
             self.costum = "top3"
+
+    def play_animation_hero(self):
+
+        qtime = (time.time() - self.q)
+        if qtime >= self.animation_delay:
+            self.q = time.time()
+            self.change_costum_hero()
 
     def move_top(self):
         self.rect_hero.y -= 3
