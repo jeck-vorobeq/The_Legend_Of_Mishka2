@@ -5,6 +5,7 @@ import pygame, time
 
 
 top1 = pygame.image.load("hero/top1.png")
+
 top2 = pygame.image.load("hero/top2.png")
 top3 = pygame.image.load("hero/top3.png")
 top1 = pygame.transform.scale(top1, [154 / 2, 269 / 2])
@@ -14,6 +15,7 @@ top3 = pygame.transform.scale(top3, [154 / 2, 269 / 2])
 bottom1 = pygame.image.load("hero/bottom1.png")
 bottom2 = pygame.image.load("hero/bottom2.png")
 bottom3 = pygame.image.load("hero/bottom3.png")
+
 bottom1 = pygame.transform.scale(bottom1, [154 / 2, 269 / 2])
 bottom2 = pygame.transform.scale(bottom2, [154 / 2, 269 / 2])
 bottom3 = pygame.transform.scale(bottom3, [154 / 2, 269 / 2])
@@ -50,7 +52,7 @@ class Hero():
             screen.blit(bottom1, self.rect_hero)
         elif self.costum == "bottom2":
             screen.blit(bottom2, self.rect_hero)
-        elif self.costum == "bottom3":
+        elif self.costum == "bottom3" or self.costum == "bottom4":
             screen.blit(bottom3, self.rect_hero)
 
         if self.costum == "right1":
@@ -92,12 +94,14 @@ class Hero():
             self.costum = "right3"
 
         if self.state == "go_bottom":
-            if self.costum != "bottom1" and self.costum != "bottom2":
+            if self.costum != "bottom1" and self.costum != "bottom2" and self.costum!="bottom3":
                 self.costum = "bottom1"
             elif self.costum == "bottom1":
-                self.costum = "bottom2"
-            elif self.costum == "bottom2":
                 self.costum = "bottom3"
+            elif self.costum == "bottom3":
+                self.costum = "bottom2"
+            elif self.costum=="bottom2":
+                self.costum="bottom4"
         if self.state == "stand_bottom":
             self.costum = "bottom3"
 

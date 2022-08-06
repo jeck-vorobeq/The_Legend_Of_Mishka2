@@ -26,5 +26,5 @@ def state_hero_stand():
 
 floor = pygame.Rect(100, 100, 600, 600)
 hero=hero_mod.Hero(500,5)
-hero2=hero_mod.Hero(50,5,6)
+hero2=hero_mod.Hero(50,5,0.4)
 
