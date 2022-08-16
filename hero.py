@@ -37,6 +37,8 @@ class Hero():
         self.animation_delay = animation_delay
 
     def draw_hero(self, screen):
+        pygame.draw.rect(screen,[255,255,20],self.rect,3)
+        return
         if self.costum == "left1":
             screen.blit(left1, self.rect)
         elif self.costum == "left2":
@@ -136,7 +138,10 @@ class Hero():
         self.change_costum_hero()
 
     def move_left(self):
-
+        print(self.rect.left)
+        if self.rect.left<=100:
+            print("danger")
+            self.rect.x=103
         self.rect.x -= 3
         self.state = "go_left"
         self.change_costum_hero()
