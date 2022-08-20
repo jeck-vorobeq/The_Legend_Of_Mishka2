@@ -30,15 +30,15 @@ right3 = pygame.transform.flip(left3, True, False)
 
 class Hero():
     def __init__(self, x, y, animation_delay=0.2):
-        self.rect = pygame.Rect(x, y, 50, 60)
+        self.rect = pygame.Rect(x, y, 76, 135)
         self.state = "go_top"
         self.costum = "top1"
         self.q = time.time()
         self.animation_delay = animation_delay
 
     def draw_hero(self, screen):
-        pygame.draw.rect(screen,[255,255,20],self.rect,3)
-        return
+        pygame.draw.rect(screen,[255,255,20],self.rect)
+
         if self.costum == "left1":
             screen.blit(left1, self.rect)
         elif self.costum == "left2":
@@ -123,26 +123,31 @@ class Hero():
             self.change_costum_hero()
 
     def move_top(self):
+        print(self.rect.y)
         self.rect.y -= 3
+        if self.rect.top<=100:
+            self.rect.y=100
         self.state = "go_top"
         self.change_costum_hero()
 
     def move_bottom(self):
         self.rect.y += 3
+        if self.rect.bottom>=700:
+            self.rect.bottom=700
         self.state = "go_bottom"
         self.change_costum_hero()
 
     def move_right(self):
         self.rect.x += 3
+        if self.rect.right>=700:
+            self.rect.right=700
         self.state = "go_right"
         self.change_costum_hero()
 
     def move_left(self):
-        print(self.rect.left)
-        if self.rect.left<=100:
-            print("danger")
-            self.rect.x=103
         self.rect.x -= 3
+        if self.rect.left<=100:
+            self.rect.x=100
         self.state = "go_left"
         self.change_costum_hero()
 
