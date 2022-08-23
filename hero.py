@@ -118,6 +118,7 @@ class Hero():
     def play_animation_hero(self):
 
         qtime = (time.time() - self.q)
+        print(self.animation_delay)
         if qtime >= self.animation_delay:
             self.q = time.time()
             self.change_costum_hero()
@@ -128,28 +129,24 @@ class Hero():
         if self.rect.top<=100:
             self.rect.y=100
         self.state = "go_top"
-        self.change_costum_hero()
 
     def move_bottom(self):
         self.rect.y += 3
         if self.rect.bottom>=700:
             self.rect.bottom=700
         self.state = "go_bottom"
-        self.change_costum_hero()
 
     def move_right(self):
         self.rect.x += 3
         if self.rect.right>=700:
             self.rect.right=700
         self.state = "go_right"
-        self.change_costum_hero()
 
     def move_left(self):
         self.rect.x -= 3
         if self.rect.left<=100:
             self.rect.x=100
         self.state = "go_left"
-        self.change_costum_hero()
 
     def state_hero_stand(self):
         if self.state == "go_left":
